@@ -248,35 +248,70 @@
     .ps-recap .r-save { background: var(--dark); border-radius: 10px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: #fff; }
 
     /* ─── FEATURES ─── */
-    .features { padding: 100px 24px; max-width: 1080px; margin: 0 auto; }
-    .features-header { text-align: center; margin-bottom: 64px; }
-    .features-header h2 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 12px; }
-    .features-header p { font-size: 18px; color: rgba(33,26,29,0.45); }
+    .features { padding: 100px 24px; max-width: 1100px; margin: 0 auto; }
 
-    .feature-bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .bento-card {
-      background: #fff; border-radius: 20px; padding: 36px;
-      border: 1px solid rgba(33,26,29,0.04);
-      transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
-      overflow: hidden;
+    .features-showcase {
+      display: flex; align-items: center; gap: 60px;
+      min-height: 600px;
     }
-    .bento-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(33,26,29,0.06); }
-    .bento-card:active { transform: scale(0.98); }
-    .bento-card.wide { grid-column: span 2; }
-    .bento-card.tall { grid-row: span 2; display: flex; flex-direction: column; }
-    .bento-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--lime-light); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 20px; }
-    .bento-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-    .bento-card p { font-size: 15px; line-height: 1.6; color: rgba(33,26,29,0.5); }
+    .fs-title { flex-shrink: 0; width: 260px; }
+    .fs-title h2 {
+      font-size: clamp(36px, 4.5vw, 52px);
+      font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.1; margin-bottom: 16px;
+    }
+    .fs-title p { font-size: 16px; color: rgba(33,26,29,0.45); line-height: 1.6; }
 
-    .voice-visual { flex: 1; display: flex; align-items: flex-end; justify-content: center; padding-top: 24px; }
-    .voice-bars { display: flex; gap: 3px; align-items: flex-end; }
-    .voice-bar { width: 4px; border-radius: 2px; background: var(--lime); animation: bar 1s var(--ease-in-out) infinite; }
-    .voice-bar:nth-child(1){height:16px;animation-delay:0s}.voice-bar:nth-child(2){height:28px;animation-delay:.08s}.voice-bar:nth-child(3){height:40px;animation-delay:.16s}.voice-bar:nth-child(4){height:24px;animation-delay:.24s}.voice-bar:nth-child(5){height:36px;animation-delay:.32s}.voice-bar:nth-child(6){height:20px;animation-delay:.4s}.voice-bar:nth-child(7){height:32px;animation-delay:.48s}.voice-bar:nth-child(8){height:12px;animation-delay:.56s}.voice-bar:nth-child(9){height:24px;animation-delay:.64s}.voice-bar:nth-child(10){height:36px;animation-delay:.72s}
-    @keyframes bar { 0%,100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
+    .fs-phone {
+      flex: 1; display: flex; justify-content: center;
+      position: relative;
+    }
+    .fs-phone-frame {
+      width: 240px; height: 500px;
+      background: #000; border-radius: 32px;
+      padding: 8px;
+      box-shadow: 0 32px 64px rgba(33,26,29,0.15);
+      position: relative; z-index: 2;
+    }
+    .fs-phone-screen {
+      width: 100%; height: 100%;
+      background: var(--lime); border-radius: 26px;
+      overflow: hidden; position: relative;
+    }
+    .fs-phone-island {
+      position: absolute; top: 6px; left: 50%;
+      transform: translateX(-50%);
+      width: 72px; height: 22px;
+      background: #000; border-radius: 11px; z-index: 10;
+    }
 
-    .card-langs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
-    .card-lang { padding: 8px 16px; border-radius: 10px; background: var(--bg); font-size: 14px; font-weight: 600; transition: background 0.2s, transform 160ms var(--ease-out); }
-    .card-lang:hover { background: var(--lime-light); transform: translateY(-1px); }
+    /* Floating feature cards */
+    .float-card {
+      position: absolute; z-index: 3;
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex; align-items: center; gap: 12px;
+      box-shadow: 0 8px 32px rgba(33,26,29,0.08);
+      border: 1px solid rgba(33,26,29,0.04);
+      white-space: nowrap;
+      transition: transform 0.3s var(--ease-out);
+    }
+    .float-card:hover { transform: translateY(-3px) !important; }
+    .fc-icon {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--lime-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+    .fc-title { font-size: 13px; font-weight: 700; }
+    .fc-desc { font-size: 11px; color: rgba(33,26,29,0.4); margin-top: 1px; }
+
+    @media (max-width: 900px) {
+      .features-showcase { flex-direction: column; gap: 40px; text-align: center; }
+      .fs-title { width: auto; }
+      .float-card { display: none; }
+    }
 
     /* ─── CTA ─── */
     .cta-section { padding: 0 24px 120px; }
@@ -529,140 +564,56 @@
 
   <!-- FEATURES -->
   <section class="features" id="features">
-    <div class="features-header reveal">
-      <h2>Conçu pour le chantier</h2>
-      <p>Pas de menus compliqués. Vous parlez, Facto fait le reste.</p>
-    </div>
-    <div class="feature-bento">
+    <div class="features-showcase">
 
-      <!-- Voice — tall with mini recording UI -->
-      <div class="bento-card tall reveal" style="background: var(--dark); color: #fff;">
-        <h3>Dictée vocale</h3>
-        <p style="color: rgba(255,255,255,0.5);">Décrivez votre devis en parlant. Client, prestations, prix — tout en une seule prise.</p>
-        <div class="voice-visual" style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;">
-          <div style="position: relative; width: 80px; height: 80px;">
-            <div class="p-ring go" style="position: absolute; inset: 0; border-radius: 50%; background: var(--lime);"></div>
-            <div class="p-ring go" style="position: absolute; inset: 0; border-radius: 50%; background: var(--lime); animation-delay: 0.3s;"></div>
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--lime); display: flex; align-items: center; justify-content: center;">
-              <div style="width: 12px; height: 12px; border-radius: 50%; background: #fff;"></div>
+      <!-- Left: title -->
+      <div class="fs-title reveal">
+        <h2>Conçu pour<br>le chantier</h2>
+        <p>Pas de menus compliqués.<br>Vous parlez, Facto fait le reste.</p>
+      </div>
+
+      <!-- Center: phone with splash -->
+      <div class="fs-phone reveal reveal-delay-1">
+        <div class="fs-phone-frame">
+          <div class="fs-phone-screen">
+            <div class="fs-phone-island"></div>
+            <!-- Splash content -->
+            <div id="fs-tile-bg" style="position: absolute; inset: 0; pointer-events: none;"></div>
+            <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding-top: 140px;">
+              <svg width="64" height="64" viewBox="0 0 124 123">
+                <path d="M64.3842 27.688L59.5038 27.6687C60.7577 45.6288 45.8093 60.5863 27.7735 59.3956L27.7792 63.4384C44.5013 62.3385 58.6884 75.1346 59.5501 91.5818C60.4157 108.089 47.7626 122.145 31.1662 122.963C14.8769 123.764 0.030915 110.922 0.0231867 94.1272L1.94139e-06 28.8227C-0.00579426 13.4677 12.968 0 28.4651 0H95.3784C112.129 0.00192974 124.786 15.0308 123.961 31.1152C123.109 47.7303 108.992 60.3238 92.4532 59.4149C76.021 58.5118 63.2307 44.3127 64.3822 27.688H64.3842Z" fill="#211A1D"/>
+                <path d="M92.5754 68.3401C106.14 67.5137 117.819 77.6734 118.913 91.1252L118.957 91.7678C119.704 105.147 109.654 116.725 96.2961 117.904L95.6575 117.952C82.0714 118.805 70.1419 108.5 69.2747 94.7161C69.2741 94.7051 69.2744 94.6939 69.2737 94.6829C68.4371 81.0971 78.6257 69.5362 91.9387 68.387L92.5754 68.3401Z" fill="#EEF0F2" stroke="#211A1D" stroke-width="10"/>
+              </svg>
+              <div style="font-size: 28px; font-weight: 800; color: var(--dark); margin-top: 10px;">facto.</div>
+              <div style="font-size: 12px; font-weight: 600; color: var(--dark); margin-top: 6px;">Moins de papier, plus de chantier</div>
             </div>
           </div>
-          <div style="font-size: 12px; color: rgba(255,255,255,0.4);">Parlez librement...</div>
-          <div style="background: rgba(255,255,255,0.05); border-radius: 10px; padding: 10px 14px; width: 100%; font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.6;">
-            Devis pour madame Benali, salle de bain, pose carrelage 25m²...
-          </div>
         </div>
-      </div>
 
-      <!-- Multilingual — language pills UI -->
-      <div class="bento-card reveal reveal-delay-1">
-        <h3>Multilingue</h3>
-        <p>Dictez dans votre langue. Facto traduit en français professionnel.</p>
-        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-top: 20px;">
-          <div style="padding: 10px 18px; border-radius: 12px; background: var(--lime-light); font-weight: 600; font-size: 14px; color: var(--lime);">FR</div>
-          <div style="padding: 10px 18px; border-radius: 12px; background: var(--bg); font-weight: 600; font-size: 14px;">AR</div>
-          <div style="padding: 10px 18px; border-radius: 12px; background: var(--bg); font-weight: 600; font-size: 14px;">PT</div>
-          <div style="padding: 10px 18px; border-radius: 12px; background: var(--bg); font-weight: 600; font-size: 14px;">TR</div>
-          <div style="padding: 10px 18px; border-radius: 12px; background: var(--bg); font-weight: 600; font-size: 14px;">EN</div>
+        <!-- Floating feature cards around the phone -->
+        <div class="float-card fc-1 reveal reveal-delay-1" style="top: 40px; left: -140px;">
+          <div class="fc-icon">🎙</div>
+          <div><div class="fc-title">Dictée vocale</div><div class="fc-desc">Parlez, c'est écrit</div></div>
         </div>
-        <div style="margin-top: 16px; background: var(--bg); border-radius: 12px; padding: 14px; font-size: 12px; line-height: 1.6;">
-          <div style="color: rgba(33,26,29,0.35); margin-bottom: 4px;">تركيب المرحاض والمغسلة</div>
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <span style="color: var(--lime);">→</span>
-            <span style="font-weight: 600;">Installation WC et lavabo</span>
-          </div>
+        <div class="float-card fc-2 reveal reveal-delay-2" style="top: 160px; right: -140px;">
+          <div class="fc-icon">🌍</div>
+          <div><div class="fc-title">Multilingue</div><div class="fc-desc">FR, AR, PT, TR, EN</div></div>
         </div>
-      </div>
-
-      <!-- AI Improve — before/after UI -->
-      <div class="bento-card reveal reveal-delay-2">
-        <h3>IA qui améliore</h3>
-        <p>Un tap et vos descriptions deviennent professionnelles.</p>
-        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
-          <div style="background: var(--bg); border-radius: 10px; padding: 10px 14px;">
-            <div style="font-size: 11px; color: rgba(33,26,29,0.3); text-decoration: line-through;">pose carrelage sdb 25m²</div>
-            <div style="font-size: 12px; font-weight: 600; margin-top: 4px;">Fourniture et pose de carrelage mural et sol (25 m²)</div>
-          </div>
-          <div style="background: var(--bg); border-radius: 10px; padding: 10px 14px;">
-            <div style="font-size: 11px; color: rgba(33,26,29,0.3); text-decoration: line-through;">install wc + lavabo</div>
-            <div style="font-size: 12px; font-weight: 600; margin-top: 4px;">Dépose et installation WC suspendu et lavabo</div>
-          </div>
+        <div class="float-card fc-3 reveal reveal-delay-1" style="top: 290px; left: -160px;">
+          <div class="fc-icon">✦</div>
+          <div><div class="fc-title">IA qui améliore</div><div class="fc-desc">Descriptions pro</div></div>
         </div>
-        <div style="margin-top: 14px; background: var(--lime-light); border: 1px solid rgba(36,151,130,0.2); border-radius: 10px; padding: 10px; text-align: center; font-size: 12px; font-weight: 600; color: var(--lime);">✦ Améliorer et vérifier</div>
-      </div>
-
-      <!-- PDF + Share — wide with mini PDF preview -->
-      <div class="bento-card wide reveal" style="display: flex; gap: 32px; align-items: center;">
-        <div style="flex: 1;">
-          <h3>PDF en un tap</h3>
-          <p>Générez un PDF professionnel et partagez par WhatsApp, email ou SMS.</p>
-          <div style="display: flex; gap: 12px; margin-top: 20px;">
-            <div style="width: 44px; height: 44px; border-radius: 12px; background: #e8f9ee; display: flex; align-items: center; justify-content: center; font-size: 18px;">💬</div>
-            <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 18px;">✉️</div>
-            <div style="width: 44px; height: 44px; border-radius: 12px; background: #e8f0ff; display: flex; align-items: center; justify-content: center; font-size: 18px;">💬</div>
-            <div style="width: 44px; height: 44px; border-radius: 12px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 16px;">↗</div>
-          </div>
+        <div class="float-card fc-4 reveal reveal-delay-2" style="top: 400px; right: -130px;">
+          <div class="fc-icon">📄</div>
+          <div><div class="fc-title">PDF en un tap</div><div class="fc-desc">WhatsApp, email, SMS</div></div>
         </div>
-        <div style="width: 200px; flex-shrink: 0; background: var(--bg); border-radius: 12px; padding: 20px; font-size: 11px;">
-          <div style="font-weight: 800; font-size: 16px; margin-bottom: 2px;">DEVIS</div>
-          <div style="color: rgba(33,26,29,0.35); font-size: 9px; margin-bottom: 12px;">N° D-2026-0047</div>
-          <div style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid rgba(33,26,29,0.06);">
-            <span style="color: rgba(33,26,29,0.5);">Carrelage</span><span style="font-weight: 600;">1 125 €</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid rgba(33,26,29,0.06);">
-            <span style="color: rgba(33,26,29,0.5);">WC + lavabo</span><span style="font-weight: 600;">800 €</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; padding: 6px 0 0; font-weight: 700; font-size: 12px;">
-            <span>Total TTC</span><span style="color: var(--lime);">2 117 €</span>
-          </div>
+        <div class="float-card fc-5 reveal reveal-delay-1" style="bottom: 60px; left: -120px;">
+          <div class="fc-icon">📁</div>
+          <div><div class="fc-title">Par projet</div><div class="fc-desc">Classé par chantier</div></div>
         </div>
-      </div>
-
-      <!-- Projects — mini project cards -->
-      <div class="bento-card reveal reveal-delay-1">
-        <h3>Par projet</h3>
-        <p>Classez vos documents par chantier.</p>
-        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="background: var(--bg); border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-weight: 600; font-size: 13px;">Réno Dupont</div>
-              <div style="font-size: 10px; color: rgba(33,26,29,0.4); margin-top: 2px;">3 devis</div>
-            </div>
-            <div style="background: var(--lime-light); color: var(--lime); font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 6px;">3 DEVIS</div>
-          </div>
-          <div style="background: var(--bg); border-radius: 10px; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-weight: 600; font-size: 13px;">Cuisine Martin</div>
-              <div style="font-size: 10px; color: rgba(33,26,29,0.4); margin-top: 2px;">1 devis</div>
-            </div>
-            <div style="background: var(--lime-light); color: var(--lime); font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 6px;">1 DEVIS</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Drag & Drop — mini list with drag handles -->
-      <div class="bento-card reveal reveal-delay-2">
-        <h3>Glissez-déposez</h3>
-        <p>Réorganisez vos prestations entre catégories.</p>
-        <div style="margin-top: 16px; display: flex; flex-direction: column; gap: 6px;">
-          <div style="background: var(--bg); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 12px;">
-            <span style="color: rgba(33,26,29,0.2); font-size: 14px;">⠿</span>
-            <span style="font-weight: 600; font-size: 11px;">Salle de bain</span>
-          </div>
-          <div style="background: var(--bg); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 12px; margin-left: 12px;">
-            <span style="color: rgba(33,26,29,0.2); font-size: 14px;">⠿</span>
-            <span style="color: rgba(33,26,29,0.6);">Pose carrelage</span>
-            <span style="margin-left: auto; font-weight: 600; font-size: 11px;">1 125 €</span>
-          </div>
-          <div style="background: #fffbea; border: 1.5px dashed var(--yellow); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 12px; margin-left: 12px; opacity: 0.7; transform: translateY(-2px);">
-            <span style="color: rgba(33,26,29,0.2); font-size: 14px;">⠿</span>
-            <span style="color: rgba(33,26,29,0.6);">Robinetterie Grohe</span>
-            <span style="background: var(--yellow); color: #fff; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 4px; margin-left: auto;">OPTION</span>
-          </div>
-          <div style="background: var(--bg); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 12px;">
-            <span style="color: rgba(33,26,29,0.2); font-size: 14px;">⠿</span>
-            <span style="font-weight: 600; font-size: 11px;">Nettoyage</span>
-          </div>
+        <div class="float-card fc-6 reveal reveal-delay-2" style="bottom: 40px; right: -150px;">
+          <div class="fc-icon">↕️</div>
+          <div><div class="fc-title">Glissez-déposez</div><div class="fc-desc">Réorganisez librement</div></div>
         </div>
       </div>
 
@@ -714,6 +665,20 @@
         html+='</svg>';
       }
       container.innerHTML=html;
+
+      // Feature splash phone tile pattern
+      const fsBg = document.getElementById('fs-tile-bg');
+      if (fsBg) {
+        let fsHtml = '';
+        const fTW=50, fTH=50, fGAP=2, fCols=6, fRows=12;
+        for(let r=0;r<fRows;r++) for(let c=0;c<fCols;c++) {
+          const x=c*(fTW+fGAP), y=r*(fTH+fGAP);
+          fsHtml+=`<svg width="${fTW}" height="${fTH}" viewBox="0 0 252 253" style="position:absolute;left:${x}px;top:${y}px">`;
+          paths.forEach(d => fsHtml+=`<path d="${d}" fill="#198873"/>`);
+          fsHtml+='</svg>';
+        }
+        fsBg.innerHTML=fsHtml;
+      }
 
       // Phone home tile pattern
       const phoneBg = document.getElementById('phone-tile-bg');
