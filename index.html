@@ -273,7 +273,7 @@
 
     .fs-phone-area {
       position: absolute;
-      top: 50%; left: 55%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
     }
@@ -680,33 +680,88 @@
           </div>
         </div>
 
-        <!-- Floating cards — positioned relative to phone area -->
-        <!-- Left side -->
-        <div class="float-card reveal" style="top: 30px; left: -180px;">
-          <div class="fc-icon">🎙</div>
-          <div><div class="fc-title">Dictée vocale</div><div class="fc-desc">Parlez, c'est écrit</div></div>
+        <!-- Floating cards with UI previews -->
+        <!-- Left: Voice recording mini -->
+        <div class="float-card reveal" style="top: 20px; left: -200px; padding: 14px 16px; min-width: 200px;">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+            <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime); animation: demoPulse 1.5s ease-in-out infinite;"></div>
+            <span style="font-size: 11px; font-weight: 600;">Dictée vocale</span>
+          </div>
+          <div style="background: var(--bg); border-radius: 8px; padding: 8px 10px; font-size: 10px; color: rgba(33,26,29,0.5); line-height: 1.5;">
+            Devis pour Mme Benali, pose carrelage 25m²...
+          </div>
         </div>
-        <div class="float-card reveal reveal-delay-1" style="top: 230px; left: -170px;">
-          <div class="fc-icon">✦</div>
-          <div><div class="fc-title">IA qui améliore</div><div class="fc-desc">Descriptions pro</div></div>
+
+        <!-- Left: AI before/after -->
+        <div class="float-card reveal reveal-delay-1" style="top: 240px; left: -220px; padding: 14px 16px; min-width: 210px; flex-direction: column; align-items: stretch; gap: 6px;">
+          <div style="font-size: 11px; font-weight: 700; margin-bottom: 4px;">✦ IA qui améliore</div>
+          <div style="font-size: 9px; color: rgba(33,26,29,0.3); text-decoration: line-through;">pose carrelage sdb</div>
+          <div style="font-size: 10px; font-weight: 600; color: var(--dark);">Fourniture et pose de carrelage mural</div>
         </div>
-        <div class="float-card reveal reveal-delay-2" style="top: 420px; left: -150px;">
-          <div class="fc-icon">📁</div>
-          <div><div class="fc-title">Par projet</div><div class="fc-desc">Classé par chantier</div></div>
+
+        <!-- Left: Projects mini -->
+        <div class="float-card reveal reveal-delay-2" style="top: 430px; left: -180px; padding: 14px 16px; min-width: 180px; flex-direction: column; align-items: stretch; gap: 6px;">
+          <div style="font-size: 11px; font-weight: 700; margin-bottom: 2px;">📁 Par projet</div>
+          <div style="display: flex; justify-content: space-between; font-size: 10px; color: rgba(33,26,29,0.5);">
+            <span>Réno Dupont</span>
+            <span style="background: var(--lime-light); color: var(--lime); font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 4px;">3 DEVIS</span>
+          </div>
         </div>
-        <!-- Right side -->
-        <div class="float-card reveal" style="top: 100px; right: -180px;">
-          <div class="fc-icon">🌍</div>
-          <div><div class="fc-title">Multilingue</div><div class="fc-desc">FR, AR, PT, TR, EN</div></div>
+
+        <!-- Right: Multilingual pills -->
+        <div class="float-card reveal" style="top: 80px; right: -200px; padding: 14px 16px; min-width: 190px; flex-direction: column; align-items: stretch; gap: 8px;">
+          <div style="font-size: 11px; font-weight: 700;">🌍 Multilingue</div>
+          <div style="display: flex; gap: 4px; flex-wrap: wrap;">
+            <span style="padding: 4px 10px; border-radius: 6px; background: var(--lime-light); font-size: 10px; font-weight: 600; color: var(--lime);">FR</span>
+            <span style="padding: 4px 10px; border-radius: 6px; background: var(--bg); font-size: 10px; font-weight: 600;">AR</span>
+            <span style="padding: 4px 10px; border-radius: 6px; background: var(--bg); font-size: 10px; font-weight: 600;">PT</span>
+            <span style="padding: 4px 10px; border-radius: 6px; background: var(--bg); font-size: 10px; font-weight: 600;">TR</span>
+          </div>
+          <div style="font-size: 9px; color: rgba(33,26,29,0.35);">تركيب المرحاض → <span style="color: var(--dark); font-weight: 600;">Installation WC</span></div>
         </div>
-        <div class="float-card reveal reveal-delay-1" style="top: 310px; right: -160px;">
-          <div class="fc-icon">📄</div>
-          <div><div class="fc-title">PDF en un tap</div><div class="fc-desc">WhatsApp, email, SMS</div></div>
+
+        <!-- Right: PDF mini -->
+        <div class="float-card reveal reveal-delay-1" style="top: 310px; right: -190px; padding: 14px 16px; min-width: 180px; flex-direction: column; align-items: stretch; gap: 6px;">
+          <div style="font-size: 11px; font-weight: 700;">📄 PDF en un tap</div>
+          <div style="display: flex; gap: 6px;">
+            <div style="width: 28px; height: 28px; border-radius: 8px; background: #e8f9ee; display: flex; align-items: center; justify-content: center; font-size: 12px;">💬</div>
+            <div style="width: 28px; height: 28px; border-radius: 8px; background: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 12px;">✉️</div>
+            <div style="width: 28px; height: 28px; border-radius: 8px; background: #e8f0ff; display: flex; align-items: center; justify-content: center; font-size: 12px;">📱</div>
+          </div>
         </div>
-        <div class="float-card reveal reveal-delay-2" style="top: 480px; right: -170px;">
-          <div class="fc-icon">↕️</div>
-          <div><div class="fc-title">Glissez-déposez</div><div class="fc-desc">Réorganisez librement</div></div>
+
+        <!-- Right: Drag drop mini -->
+        <div class="float-card reveal reveal-delay-2" style="top: 470px; right: -200px; padding: 14px 16px; min-width: 190px; flex-direction: column; align-items: stretch; gap: 4px;">
+          <div style="font-size: 11px; font-weight: 700; margin-bottom: 2px;">↕️ Glissez-déposez</div>
+          <div style="background: var(--bg); border-radius: 6px; padding: 6px 8px; font-size: 9px; display: flex; align-items: center; gap: 6px;">
+            <span style="color: rgba(33,26,29,0.2);">⠿</span> Pose carrelage <span style="margin-left: auto; font-weight: 600;">1 125 €</span>
+          </div>
+          <div style="background: #fffbea; border: 1px dashed var(--yellow); border-radius: 6px; padding: 6px 8px; font-size: 9px; display: flex; align-items: center; gap: 6px; opacity: 0.8;">
+            <span style="color: rgba(33,26,29,0.2);">⠿</span> Robinetterie
+            <span style="background: var(--yellow); color: #fff; font-size: 7px; font-weight: 700; padding: 1px 4px; border-radius: 3px; margin-left: auto;">OPTION</span>
+          </div>
         </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="features-stats reveal" style="display: flex; align-items: center; gap: 40px; margin-top: 60px; padding-top: 48px; border-top: 1px solid rgba(33,26,29,0.06);">
+        <div style="flex: 1; display: flex; gap: 40px;">
+          <div>
+            <div style="font-size: 36px; font-weight: 800; color: var(--dark);">73%</div>
+            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px;">des clients choisissent l'artisan avec le devis le plus pro</div>
+          </div>
+          <div>
+            <div style="font-size: 36px; font-weight: 800; color: var(--dark);">30s</div>
+            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px;">pour créer un devis complet avec Facto</div>
+          </div>
+          <div>
+            <div style="font-size: 36px; font-weight: 800; color: var(--dark);">5</div>
+            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px;">langues supportées pour la dictée vocale</div>
+          </div>
+        </div>
+        <a href="https://apps.apple.com/app/facto/id6760936380" style="background: var(--dark); color: #fff; padding: 14px 28px; border-radius: 14px; font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform 160ms var(--ease-out); flex-shrink: 0;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+          Télécharger Facto
+        </a>
       </div>
 
     </div>
@@ -829,14 +884,14 @@
       }
       container.innerHTML=html;
 
-      // Feature splash phone tile pattern — 2 rows centered
+      // Feature splash phone tile pattern — 2 columns centered
       const fsBg = document.getElementById('fs-tile-bg');
       if (fsBg) {
         let fsHtml = '';
-        const fTW=55, fTH=55, fGAP=2, fCols=6, fRows=2;
-        const startY = Math.round((540 - fRows * (fTH + fGAP)) / 2) - 20;
+        const fTW=55, fTH=55, fGAP=2, fCols=2, fRows=10;
+        const startX = Math.round((260 - fCols * (fTW + fGAP)) / 2);
         for(let r=0;r<fRows;r++) for(let c=0;c<fCols;c++) {
-          const x=c*(fTW+fGAP), y=startY + r*(fTH+fGAP);
+          const x=startX + c*(fTW+fGAP), y=r*(fTH+fGAP);
           fsHtml+=`<svg width="${fTW}" height="${fTH}" viewBox="0 0 252 253" style="position:absolute;left:${x}px;top:${y}px">`;
           paths.forEach(d => fsHtml+=`<path d="${d}" fill="#198873"/>`);
           fsHtml+='</svg>';
