@@ -256,7 +256,6 @@
       max-width: 1100px; margin: 0 auto;
       padding: 0 40px;
       position: relative;
-      min-height: 700px;
     }
 
     .fs-title {
@@ -272,9 +271,10 @@
     .fs-title p { font-size: 16px; color: rgba(33,26,29,0.45); line-height: 1.6; }
 
     .fs-phone-area {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      position: relative;
+      margin: 60px auto 0;
       z-index: 2;
     }
     .fs-phone-frame {
@@ -328,10 +328,11 @@
     .fc-desc { font-size: 11px; color: rgba(33,26,29,0.4); margin-top: 2px; }
 
     @media (max-width: 900px) {
-      .features-inner { min-height: auto; padding-bottom: 500px; }
       .fs-title { max-width: none; text-align: center; }
-      .fs-phone-area { position: relative; top: auto; left: auto; transform: none; margin: 40px auto 0; }
+      .fs-phone-area { margin-top: 40px; }
       .float-card { display: none; }
+      .features-stats { flex-direction: column; gap: 24px; text-align: center; }
+      .features-stats > div:first-child { flex-direction: column; gap: 24px; }
     }
 
     /* ─── CTA ─── */
