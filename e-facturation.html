@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-facturation obligatoire 2026 : guide pour les artisans | Facto</title>
+  <meta name="description" content="La facture électronique devient obligatoire dès septembre 2026 pour tous les artisans. Découvrez ce qui change, les dates clés et comment Facto vous met en conformité.">
+  <meta name="keywords" content="e-facturation, facturation électronique, obligatoire, 2026, 2027, artisan, auto-entrepreneur, plombier, électricien, devis, facture">
+  <meta property="og:title" content="E-facturation obligatoire 2026 : ce que les artisans doivent savoir">
+  <meta property="og:description" content="La facture électronique devient obligatoire. Facto prépare les artisans à la transition.">
+  <meta property="og:url" content="https://facto-app.fr/e-facturation">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://facto-app.fr/e-facturation">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --dark: #211A1D;
+      --bg: #EEF0F2;
+      --lime: #249782;
+      --lime-light: #D1F0EA;
+      --yellow: #F0C846;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--dark); -webkit-font-smoothing: antialiased; }
+
+    /* Nav */
+    nav {
+      position: sticky; top: 0; z-index: 50;
+      padding: 16px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(238,240,242,0.9);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .nav-logo { font-size: 22px; font-weight: 800; color: var(--dark); text-decoration: none; }
+    .nav-logo span { color: var(--lime); }
+    .nav-cta {
+      background: var(--dark); color: #fff;
+      padding: 10px 22px; border-radius: 12px; font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: transform 160ms var(--ease-out);
+    }
+    .nav-cta:hover { transform: translateY(-1px); }
+
+    /* Hero */
+    .hero {
+      max-width: 800px; margin: 0 auto;
+      padding: 80px 24px 60px; text-align: center;
+    }
+    .hero-badge {
+      display: inline-block; background: #FEF3CD; color: #92600A;
+      font-size: 13px; font-weight: 700; padding: 6px 16px;
+      border-radius: 20px; margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 52px); font-weight: 800;
+      line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--lime); }
+    .hero p {
+      font-size: 18px; color: #6B7280; line-height: 1.7;
+      max-width: 600px; margin: 0 auto;
+    }
+
+    /* Content */
+    .content {
+      max-width: 760px; margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Timeline */
+    .timeline { margin-bottom: 60px; }
+    .tl-item {
+      display: flex; gap: 24px; margin-bottom: 32px;
+      position: relative;
+    }
+    .tl-item::before {
+      content: ''; position: absolute;
+      left: 23px; top: 48px; bottom: -32px;
+      width: 2px; background: #E2E5E9;
+    }
+    .tl-item:last-child::before { display: none; }
+    .tl-date {
+      width: 48px; height: 48px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; flex-shrink: 0;
+      position: relative; z-index: 2;
+    }
+    .tl-date.urgent { background: #FEF3CD; color: #92600A; }
+    .tl-date.future { background: var(--lime-light); color: var(--lime); }
+    .tl-content h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .tl-content p { font-size: 15px; color: #6B7280; line-height: 1.6; }
+
+    /* Sections */
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-size: 28px; font-weight: 800; letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section p, .section li {
+      font-size: 16px; color: #4B5563; line-height: 1.7;
+    }
+    .section ul { padding-left: 20px; margin-top: 12px; }
+    .section li { margin-bottom: 8px; }
+    .section li strong { color: var(--dark); }
+
+    /* Who card */
+    .who-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-top: 20px;
+    }
+    .who-card {
+      background: #fff; border-radius: 16px; padding: 20px;
+      text-align: center;
+    }
+    .who-card .emoji { font-size: 28px; margin-bottom: 8px; }
+    .who-card h4 { font-size: 15px; font-weight: 700; }
+    .who-card p { font-size: 13px; color: #6B7280; margin-top: 4px; }
+
+    /* Facto card */
+    .facto-card {
+      background: var(--dark); color: #fff; border-radius: 24px;
+      padding: 48px; margin: 48px 0; position: relative; overflow: hidden;
+    }
+    .facto-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 50% 60% at 80% 100%, rgba(36,151,130,0.15), transparent);
+    }
+    .facto-card h2 {
+      font-size: 28px; font-weight: 800; margin-bottom: 16px;
+      position: relative;
+    }
+    .facto-card p {
+      font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.7;
+      margin-bottom: 24px; position: relative;
+    }
+    .facto-features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      position: relative;
+    }
+    .facto-feat {
+      background: rgba(255,255,255,0.06); border-radius: 14px;
+      padding: 20px; border: 1px solid rgba(255,255,255,0.06);
+    }
+    .facto-feat h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .facto-feat p { font-size: 13px; color: rgba(255,255,255,0.4); margin: 0; }
+    .facto-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--lime); color: #fff;
+      padding: 14px 32px; border-radius: 14px;
+      font-size: 16px; font-weight: 700;
+      text-decoration: none; margin-top: 28px;
+      transition: transform 160ms var(--ease-out);
+      position: relative;
+    }
+    .facto-cta:hover { transform: translateY(-2px); }
+
+    /* FAQ */
+    .faq { margin-top: 48px; }
+    .faq h2 { font-size: 24px; font-weight: 800; margin-bottom: 20px; }
+    .faq-item { border-top: 1px solid #E2E5E9; padding: 20px 0; cursor: pointer; }
+    .faq-item:last-child { border-bottom: 1px solid #E2E5E9; }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 16px; font-weight: 600;
+    }
+    .faq-q .arrow { color: #9CA3AF; transition: transform 0.3s; font-size: 18px; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s;
+      font-size: 15px; color: #6B7280; line-height: 1.6;
+    }
+    .faq-item.open .faq-a { max-height: 300px; margin-top: 12px; }
+
+    /* Footer */
+    footer {
+      padding: 32px 24px 48px; border-top: 1px solid #E2E5E9;
+      max-width: 760px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    footer .f-logo { font-size: 18px; font-weight: 800; }
+    footer .f-logo span { color: var(--lime); }
+    footer a { font-size: 13px; color: #9CA3AF; text-decoration: none; }
+    footer a:hover { color: var(--dark); }
+
+    @media (max-width: 640px) {
+      nav { padding: 12px 20px; }
+      .who-grid { grid-template-columns: 1fr; }
+      .facto-features { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "E-facturation obligatoire 2026 : guide pour les artisans",
+    "description": "La facture électronique devient obligatoire dès septembre 2026 pour tous les artisans français. Dates clés, obligations et solutions.",
+    "author": { "@type": "Organization", "name": "Facto" },
+    "publisher": { "@type": "Organization", "name": "Facto", "url": "https://facto-app.fr" },
+    "datePublished": "2026-03-25",
+    "dateModified": "2026-03-25"
+  }
+  </script>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">facto<span>.</span></a>
+    <a href="https://apps.apple.com/app/facto/id6760936380" class="nav-cta">Télécharger Facto</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">⚠️ Obligation légale à partir de sept. 2026</div>
+    <h1>La facture électronique<br>devient <em>obligatoire</em></h1>
+    <p>Que vous soyez plombier, électricien, maçon ou peintre — vous êtes concerné. Voici ce que vous devez savoir et comment vous préparer.</p>
+  </section>
+
+  <div class="content">
+
+    <!-- TIMELINE -->
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date urgent">SEP<br>26</div>
+        <div class="tl-content">
+          <h3>Réception obligatoire</h3>
+          <p>Toutes les entreprises assujetties à la TVA devront être capables de <strong>recevoir des factures électroniques</strong>. Cela inclut les artisans, auto-entrepreneurs et professions libérales — même ceux en franchise de TVA.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date future">SEP<br>27</div>
+        <div class="tl-content">
+          <h3>Émission obligatoire</h3>
+          <p>Toutes les entreprises devront <strong>émettre leurs factures au format électronique</strong> via une plateforme agréée. Les factures papier et PDF envoyés par email ne seront plus conformes pour les transactions B2B.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date future">E-REP</div>
+        <div class="tl-content">
+          <h3>E-reporting des transactions B2C</h3>
+          <p>Les transactions avec les particuliers (B2C) devront être <strong>déclarées à l'administration fiscale</strong> via le e-reporting, même si elles ne passent pas par la facturation électronique.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHO -->
+    <div class="section">
+      <h2>Qui est concerné ?</h2>
+      <p>Tous les professionnels assujettis à la TVA établis en France. Même si vous ne la facturez pas (franchise en base), vous êtes considéré comme assujetti et devez vous conformer.</p>
+      <div class="who-grid">
+        <div class="who-card">
+          <div class="emoji">🔧</div>
+          <h4>Plombiers</h4>
+          <p>Artisan ou société</p>
+        </div>
+        <div class="who-card">
+          <div class="emoji">⚡</div>
+          <h4>Électriciens</h4>
+          <p>Artisan ou société</p>
+        </div>
+        <div class="who-card">
+          <div class="emoji">🧱</div>
+          <h4>Maçons</h4>
+          <p>Artisan ou société</p>
+        </div>
+        <div class="who-card">
+          <div class="emoji">🎨</div>
+          <h4>Peintres</h4>
+          <p>Artisan ou société</p>
+        </div>
+        <div class="who-card">
+          <div class="emoji">🏗️</div>
+          <h4>Tous métiers BTP</h4>
+          <p>Sans exception</p>
+        </div>
+        <div class="who-card">
+          <div class="emoji">📋</div>
+          <h4>Auto-entrepreneurs</h4>
+          <p>Même en franchise TVA</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT CHANGES -->
+    <div class="section">
+      <h2>Qu'est-ce qui change concrètement ?</h2>
+      <ul>
+        <li><strong>Fini les factures PDF par email</strong> — Les factures devront transiter via une plateforme de dématérialisation partenaire (PDP) agréée par l'État.</li>
+        <li><strong>Format structuré obligatoire</strong> — Les factures devront être dans un format lisible par les machines (Factur-X, UBL ou CII), pas simplement un PDF.</li>
+        <li><strong>Transmission automatique au fisc</strong> — Vos données de facturation seront transmises à l'administration fiscale en temps réel via le e-reporting.</li>
+        <li><strong>Mentions obligatoires renforcées</strong> — Numéro SIREN du client, adresse de livraison, catégorie de l'opération (bien, service, mixte).</li>
+      </ul>
+    </div>
+
+    <!-- PENALTIES -->
+    <div class="section">
+      <h2>Quels risques en cas de non-conformité ?</h2>
+      <p>Le non-respect de l'obligation de facturation électronique est sanctionné par :</p>
+      <ul>
+        <li><strong>15 € par facture</strong> non émise au format électronique, plafonné à 15 000 € par an</li>
+        <li><strong>250 € par transmission</strong> manquante en e-reporting, plafonné à 15 000 € par an</li>
+        <li>Risque de <strong>redressement fiscal</strong> en cas de non-déclaration des transactions</li>
+      </ul>
+    </div>
+
+    <!-- FACTO SOLUTION -->
+    <div class="facto-card">
+      <h2>Facto vous prépare dès aujourd'hui</h2>
+      <p>Facto génère des devis et factures structurés, prêts pour la transition vers la facturation électronique. Commencez maintenant pour être en conformité le jour J.</p>
+
+      <div class="facto-features">
+        <div class="facto-feat">
+          <h4>🎙 Dictée vocale</h4>
+          <p>Créez vos devis en parlant, dans votre langue</p>
+        </div>
+        <div class="facto-feat">
+          <h4>📄 PDF professionnel</h4>
+          <p>Factures aux normes, prêtes à être converties en Factur-X</p>
+        </div>
+        <div class="facto-feat">
+          <h4>✦ IA qui améliore</h4>
+          <p>Descriptions pro, mentions légales automatiques</p>
+        </div>
+        <div class="facto-feat">
+          <h4>📱 Mobile + Web</h4>
+          <p>Créez sur le chantier, finalisez au bureau</p>
+        </div>
+      </div>
+
+      <a href="https://apps.apple.com/app/facto/id6760936380" class="facto-cta">
+        Télécharger Facto gratuitement
+      </a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+      <h2>Questions fréquentes</h2>
+
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Je suis auto-entrepreneur en franchise de TVA, suis-je concerné ?</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">Oui. Même si vous ne facturez pas la TVA, vous êtes considéré comme assujetti « non redevable » et devez vous conformer aux nouvelles obligations de réception (sept. 2026) et d'émission (sept. 2027) de factures électroniques.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Puis-je continuer à envoyer des factures PDF par email ?</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">Pour les transactions B2B, les factures PDF classiques ne seront plus conformes à partir de septembre 2027. Elles devront transiter par une plateforme agréée dans un format structuré (Factur-X, UBL ou CII). Pour les particuliers (B2C), vous pourrez encore utiliser des PDF, mais vous devrez déclarer ces transactions via le e-reporting.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Qu'est-ce qu'une plateforme de dématérialisation partenaire (PDP) ?</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">Une PDP est une plateforme privée agréée par l'administration fiscale qui sert d'intermédiaire pour l'envoi et la réception des factures électroniques. Elle convertit vos factures au bon format, les transmet au destinataire et reporte les données au fisc. Facto travaille à devenir compatible avec les PDP agréées.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Combien ça coûte de se mettre en conformité ?</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">Facto est gratuit pour commencer. Les fonctionnalités essentielles (création de devis et factures, PDF, partage) sont disponibles sans abonnement. Les plans Solo et Pro débloquent plus de documents et de fonctionnalités avancées. C'est bien moins cher que les 15 € d'amende par facture non conforme.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Facto est-il déjà conforme à la réforme ?</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">Facto génère des factures structurées avec toutes les mentions obligatoires. Nous travaillons activement sur la compatibilité Factur-X et l'intégration avec les plateformes de dématérialisation partenaires (PDP) pour être pleinement conforme avant les échéances de 2026 et 2027.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>Je fais surtout des devis, pas des factures. Suis-je quand même concerné ?</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="faq-a">Les devis ne sont pas directement concernés par la réforme — seules les factures le sont. Mais dès qu'un devis est accepté et qu'une facture est émise, celle-ci devra être au format électronique. Utiliser Facto dès le devis vous permet de convertir facilement en facture conforme.</div>
+      </div>
+    </div>
+
+    <!-- Sources -->
+    <div class="section" style="margin-top: 48px;">
+      <p style="font-size: 13px; color: #9CA3AF;">
+        Sources : <a href="https://www.economie.gouv.fr/tout-savoir-sur-la-facturation-electronique-pour-les-entreprises" style="color: var(--lime); text-decoration: none;">economie.gouv.fr</a>,
+        <a href="https://www.portail-autoentrepreneur.fr/academie/gestion-auto-entreprise/facturation/facturation-electronique-2026" style="color: var(--lime); text-decoration: none;">portail-autoentrepreneur.fr</a>
+        · Dernière mise à jour : mars 2026
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="f-logo">facto<span>.</span></div>
+    <div style="display: flex; gap: 20px;">
+      <a href="/">Accueil</a>
+      <a href="/privacy.html">Confidentialité</a>
+      <a href="/terms.html">CGU</a>
+      <a href="mailto:contact@facto-app.fr">Contact</a>
+    </div>
+    <span style="font-size: 13px; color: #9CA3AF;">© 2026 Facto</span>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+  </script>
+</body>
+</html>
