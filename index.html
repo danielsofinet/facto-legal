@@ -332,7 +332,16 @@
     @media (max-width: 900px) {
       .fs-title { max-width: none; text-align: center; }
       .fs-phone-area { margin-top: 40px; }
-      .float-card { display: none; }
+      .fs-phone-frame { width: 100%; max-width: 100%; height: auto; border-radius: 0; padding: 0; background: none; box-shadow: none; }
+      .fs-phone-screen { display: none; }
+      .fs-phone-island { display: none; }
+      .float-card {
+        position: static !important;
+        left: auto !important; right: auto !important; top: auto !important; bottom: auto !important;
+        margin: 8px 0;
+        min-width: auto !important;
+        width: 100%;
+      }
       .features-stats { flex-direction: column; gap: 24px; text-align: center; }
       .features-stats > div:first-child { flex-direction: column; gap: 24px; }
     }
@@ -684,7 +693,7 @@
 
         <!-- Floating cards with UI previews (relative to phone frame) -->
         <!-- Left: Voice recording mini -->
-        <div class="float-card reveal" style="top: 10px; left: -230px; padding: 14px 16px; min-width: 200px;">
+        <div class="float-card reveal" style="top: 20px; left: -280px; padding: 14px 16px; min-width: 190px;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
             <div style="width: 8px; height: 8px; border-radius: 50%; background: var(--lime); animation: demoPulse 1.5s ease-in-out infinite;"></div>
             <span style="font-size: 11px; font-weight: 600;">Dictée vocale</span>
@@ -695,7 +704,7 @@
         </div>
 
         <!-- Left: AI before/after -->
-        <div class="float-card reveal reveal-delay-1" style="top: 240px; left: -220px; padding: 14px 16px; min-width: 210px; flex-direction: column; align-items: stretch; gap: 6px;">
+        <div class="float-card reveal reveal-delay-1" style="top: 240px; left: -180px; padding: 14px 16px; min-width: 210px; flex-direction: column; align-items: stretch; gap: 6px;">
           <div style="font-size: 11px; font-weight: 700; margin-bottom: 4px;">✦ IA qui améliore</div>
           <div style="font-size: 9px; color: rgba(33,26,29,0.3); text-decoration: line-through;">pose carrelage sdb</div>
           <div style="font-size: 10px; font-weight: 600; color: var(--dark);">Fourniture et pose de carrelage mural</div>
@@ -711,7 +720,7 @@
         </div>
 
         <!-- Right: Multilingual pills -->
-        <div class="float-card reveal" style="top: 80px; right: -200px; padding: 14px 16px; min-width: 190px; flex-direction: column; align-items: stretch; gap: 8px;">
+        <div class="float-card reveal" style="top: 80px; right: -160px; padding: 14px 16px; min-width: 190px; flex-direction: column; align-items: stretch; gap: 8px;">
           <div style="font-size: 11px; font-weight: 700;">🌍 Multilingue</div>
           <div style="display: flex; gap: 4px; flex-wrap: wrap;">
             <span style="padding: 4px 10px; border-radius: 6px; background: var(--lime-light); font-size: 10px; font-weight: 600; color: var(--lime);">FR</span>
@@ -733,7 +742,7 @@
         </div>
 
         <!-- Right: Drag drop mini -->
-        <div class="float-card reveal reveal-delay-2" style="top: 470px; right: -200px; padding: 14px 16px; min-width: 190px; flex-direction: column; align-items: stretch; gap: 4px;">
+        <div class="float-card reveal reveal-delay-2" style="top: 470px; right: -110px; padding: 14px 16px; min-width: 190px; flex-direction: column; align-items: stretch; gap: 4px;">
           <div style="font-size: 11px; font-weight: 700; margin-bottom: 2px;">↕️ Glissez-déposez</div>
           <div style="background: var(--bg); border-radius: 6px; padding: 6px 8px; font-size: 9px; display: flex; align-items: center; gap: 6px;">
             <span style="color: rgba(33,26,29,0.2);">⠿</span> Pose carrelage <span style="margin-left: auto; font-weight: 600;">1 125 €</span>
@@ -747,24 +756,36 @@
       </div><!-- close phone-area -->
 
       <!-- Stats bar -->
-      <div class="features-stats reveal" style="display: flex; align-items: center; gap: 40px; margin-top: 60px; padding-top: 48px; border-top: 1px solid rgba(33,26,29,0.06);">
+      <div class="features-stats reveal" style="display: flex; align-items: flex-start; gap: 60px; margin-top: 60px; padding-top: 48px; border-top: 1px solid rgba(33,26,29,0.06);">
         <div style="flex: 1; display: flex; gap: 40px;">
           <div>
             <div style="font-size: 36px; font-weight: 800; color: var(--dark);">73%</div>
-            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px;">des clients choisissent l'artisan avec le devis le plus pro</div>
+            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px; max-width: 180px;">des clients choisissent l'artisan avec le devis le plus professionnel</div>
           </div>
           <div>
-            <div style="font-size: 36px; font-weight: 800; color: var(--dark);">30s</div>
-            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px;">pour créer un devis complet avec Facto</div>
+            <div style="font-size: 36px; font-weight: 800; color: var(--dark);">2.4x</div>
+            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px; max-width: 180px;">plus de chances de décrocher un chantier avec un devis structuré</div>
           </div>
           <div>
-            <div style="font-size: 36px; font-weight: 800; color: var(--dark);">5</div>
-            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px;">langues supportées pour la dictée vocale</div>
+            <div style="font-size: 36px; font-weight: 800; color: var(--dark);">45%</div>
+            <div style="font-size: 13px; color: rgba(33,26,29,0.4); margin-top: 4px; max-width: 180px;">des artisans perdent des clients à cause de devis mal présentés</div>
           </div>
         </div>
-        <a href="https://apps.apple.com/app/facto/id6760936380" style="background: var(--dark); color: #fff; padding: 14px 28px; border-radius: 14px; font-size: 15px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform 160ms var(--ease-out); flex-shrink: 0;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-          Télécharger Facto
-        </a>
+        <div style="flex-shrink: 0; text-align: right;">
+          <div style="font-size: 20px; font-weight: 800; color: var(--dark); margin-bottom: 16px;">Télécharger Facto</div>
+          <div style="display: flex; gap: 8px; justify-content: flex-end;">
+            <a href="https://apps.apple.com/app/facto/id6760936380" style="background: var(--dark); color: #fff; padding: 12px 22px; border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform 160ms var(--ease-out);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11"/></svg>
+              iOS
+            </a>
+            <a href="#" style="background: rgba(33,26,29,0.06); color: var(--dark); padding: 12px 22px; border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform 160ms var(--ease-out);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              Android
+            </a>
+            <a href="#" style="background: rgba(33,26,29,0.06); color: var(--dark); padding: 12px 22px; border-radius: 12px; font-size: 14px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: transform 160ms var(--ease-out);" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+              Web
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -887,15 +908,20 @@
       }
       container.innerHTML=html;
 
-      // Feature splash phone tile pattern — 2 columns filling full phone
+      // Feature splash phone tile pattern — 2 columns centered, filling phone
       const fsBg = document.getElementById('fs-tile-bg');
       if (fsBg) {
         let fsHtml = '';
-        const fTW=120, fTH=120, fGAP=3, fCols=2, fRows=5;
-        const totalW = fCols * (fTW + fGAP) - fGAP;
-        const startX = Math.round((260 - totalW) / 2);
+        // Phone screen inner width is ~244px (260 - 2*8 padding)
+        const screenW = 244, screenH = 524;
+        const fTW=120, fTH=120, fGAP=3;
+        const fCols=2, fRows=Math.ceil(screenH / (fTH + fGAP)) + 1;
+        const totalW = fCols * fTW + (fCols - 1) * fGAP;
+        const startX = Math.round((screenW - totalW) / 2);
+        const totalH = fRows * fTH + (fRows - 1) * fGAP;
+        const startY = Math.round((screenH - totalH) / 2);
         for(let r=0;r<fRows;r++) for(let c=0;c<fCols;c++) {
-          const x=startX + c*(fTW+fGAP), y=r*(fTH+fGAP);
+          const x=startX + c*(fTW+fGAP), y=startY + r*(fTH+fGAP);
           fsHtml+=`<svg width="${fTW}" height="${fTH}" viewBox="0 0 252 253" style="position:absolute;left:${x}px;top:${y}px">`;
           paths.forEach(d => fsHtml+=`<path d="${d}" fill="#198873"/>`);
           fsHtml+='</svg>';
