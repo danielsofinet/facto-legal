@@ -47,6 +47,16 @@
       text-decoration: none; transition: color 0.2s;
     }
     .nav-right a:hover { color: var(--dark); }
+    .lang-switch { display: flex; gap: 2px; background: rgba(33,26,29,0.06); border-radius: 8px; padding: 2px; }
+    .ls-btn {
+      border: none; background: none; font-family: 'Outfit', sans-serif;
+      font-size: 12px; font-weight: 600; color: rgba(33,26,29,0.35);
+      padding: 5px 10px; border-radius: 6px; cursor: pointer;
+      transition: all 0.2s var(--ease-out);
+    }
+    .ls-btn.active { background: #fff; color: var(--dark); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .ls-btn:hover:not(.active) { color: var(--dark); }
+
     .nav-cta {
       background: var(--dark) !important; color: #fff !important;
       padding: 10px 22px; border-radius: 12px; font-weight: 600 !important;
@@ -88,6 +98,7 @@
       text-transform: uppercase; color: var(--lime);
       margin-bottom: 24px;
       opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.2s forwards;
+      transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
     }
     .hero-text h1 {
       font-size: clamp(40px, 5vw, 60px);
@@ -95,6 +106,7 @@
       color: #fff; margin-bottom: 20px;
       padding-right: 12px;
       opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.35s forwards;
+      transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
     }
     .hero-text h1 .accent {
       background: linear-gradient(135deg, var(--lime), #2dd4a8);
@@ -106,6 +118,7 @@
       font-size: 17px; color: rgba(255,255,255,1);
       line-height: 1.6; max-width: 380px; margin-bottom: 36px;
       opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.5s forwards;
+      transition: opacity 0.25s var(--ease-out), transform 0.25s var(--ease-out);
     }
     .hero-cta {
       display: inline-flex; align-items: center; gap: 10px;
@@ -298,6 +311,32 @@
     .footer-links a:hover { color: var(--dark); }
     .footer-copy { font-size: 13px; color: rgba(33,26,29,0.25); }
 
+    /* ─── 3 STEPS ─── */
+    .steps { padding: 80px 24px; max-width: 900px; margin: 0 auto; }
+    .steps-grid { display: flex; gap: 16px; }
+    .step-card {
+      flex: 1; background: #fff; border-radius: 20px; padding: 32px 28px;
+      border: 1px solid rgba(33,26,29,0.04);
+      text-align: center; position: relative;
+    }
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--lime-light); color: var(--lime);
+      font-weight: 800; font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .step-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .step-card p { font-size: 14px; color: rgba(33,26,29,0.5); line-height: 1.5; }
+    .step-arrow {
+      display: flex; align-items: center; color: rgba(33,26,29,0.15);
+      font-size: 24px; padding: 0 4px;
+    }
+    @media (max-width: 768px) {
+      .steps-grid { flex-direction: column; }
+      .step-arrow { transform: rotate(90deg); justify-content: center; padding: 8px 0; }
+    }
+
     /* ─── REVEAL ─── */
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -325,6 +364,11 @@
   <nav>
     <a href="/" class="nav-logo">facto<span>.</span></a>
     <div class="nav-right">
+      <div class="lang-switch" id="lang-switch">
+        <button class="ls-btn active" data-lang="fr">FR</button>
+        <button class="ls-btn" data-lang="ar">AR</button>
+        <button class="ls-btn" data-lang="pt">PT</button>
+      </div>
       <a href="#features">Fonctionnalités</a>
       <a href="https://apps.apple.com/app/facto/id6760936380">iOS</a>
       <a href="#">Android</a>
@@ -343,9 +387,9 @@
           <path d="M64.3842 27.688L59.5038 27.6687C60.7577 45.6288 45.8093 60.5863 27.7735 59.3956L27.7792 63.4384C44.5013 62.3385 58.6884 75.1346 59.5501 91.5818C60.4157 108.089 47.7626 122.145 31.1662 122.963C14.8769 123.764 0.030915 110.922 0.0231867 94.1272L1.94139e-06 28.8227C-0.00579426 13.4677 12.968 0 28.4651 0H95.3784C112.129 0.00192974 124.786 15.0308 123.961 31.1152C123.109 47.7303 108.992 60.3238 92.4532 59.4149C76.021 58.5118 63.2307 44.3127 64.3822 27.688H64.3842Z" fill="#FFFFFF"/>
           <path d="M92.5754 68.3401C106.14 67.5137 117.819 77.6734 118.913 91.1252L118.957 91.7678C119.704 105.147 109.654 116.725 96.2961 117.904L95.6575 117.952C82.0714 118.805 70.1419 108.5 69.2747 94.7161C69.2741 94.7051 69.2744 94.6939 69.2737 94.6829C68.4371 81.0971 78.6257 69.5362 91.9387 68.387L92.5754 68.3401Z" fill="#EEF0F2" stroke="#221A1D" stroke-width="10"/>
         </svg>
-        <div class="hero-label">Pour les artisans du bâtiment</div>
-        <h1>Dictez,<br>c'est <span class="accent">devisé</span></h1>
-        <p class="sub">Parlez dans la langue de votre choix. Facto structure, traduit et génère votre devis en quelques secondes.</p>
+        <div class="hero-label" id="hero-label">Pour les artisans du bâtiment</div>
+        <h1 id="hero-title">Dictez,<br>c'est <span class="accent">devisé</span></h1>
+        <p class="sub" id="hero-sub">Parlez dans la langue de votre choix. Facto structure, traduit et génère votre devis en quelques secondes.</p>
         <div class="hero-downloads" style="opacity: 0; animation: fadeUp 0.7s var(--ease-out) 0.65s forwards;">
           <p style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px;">Télécharger gratuitement</p>
           <div style="display: flex; gap: 10px; flex-wrap: wrap;">
@@ -457,6 +501,29 @@
 
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 STEPS -->
+  <section class="steps">
+    <div class="steps-grid">
+      <div class="step-card reveal">
+        <div class="step-num">1</div>
+        <h4>Parlez</h4>
+        <p>Décrivez votre devis à voix haute, dans la langue de votre choix.</p>
+      </div>
+      <div class="step-arrow reveal">→</div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">2</div>
+        <h4>Facto structure</h4>
+        <p>L'IA organise le client, les prestations et les prix automatiquement.</p>
+      </div>
+      <div class="step-arrow reveal">→</div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">3</div>
+        <h4>PDF envoyé</h4>
+        <p>Générez un PDF pro et partagez-le en un tap par WhatsApp, email ou SMS.</p>
       </div>
     </div>
   </section>
@@ -753,6 +820,58 @@
       }
     }
     phoneDemo();
+
+    // Language switcher
+    const translations = {
+      fr: {
+        label: "Pour les artisans du bâtiment",
+        title: 'Dictez,<br>c\'est <span class="accent">devisé</span>',
+        sub: "Parlez dans la langue de votre choix. Facto structure, traduit et génère votre devis en quelques secondes."
+      },
+      ar: {
+        label: "للحرفيين في قطاع البناء",
+        title: 'تكلّم،<br><span class="accent">وسنجهّز عرض السعر</span>',
+        sub: "تحدّث بلغتك. فاكتو يفهم، يترجم وينظّم عرض السعر تلقائياً بالفرنسية."
+      },
+      pt: {
+        label: "Para artesãos da construção",
+        title: 'Fale,<br>e o <span class="accent">orçamento está pronto</span>',
+        sub: "Fale na sua língua. O Facto compreende, traduz e gera o seu orçamento automaticamente em francês."
+      }
+    };
+
+    document.querySelectorAll('.ls-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        const t = translations[lang];
+        if (!t) return;
+
+        document.querySelectorAll('.ls-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const label = document.getElementById('hero-label');
+        const title = document.getElementById('hero-title');
+        const sub = document.getElementById('hero-sub');
+
+        // Fade out
+        [label, title, sub].forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(8px)'; });
+
+        setTimeout(() => {
+          label.textContent = t.label;
+          title.innerHTML = t.title;
+          sub.textContent = t.sub;
+
+          // Set text direction for Arabic
+          const dir = lang === 'ar' ? 'rtl' : 'ltr';
+          [label, title, sub].forEach(el => { el.style.direction = dir; });
+
+          // Fade in
+          requestAnimationFrame(() => {
+            [label, title, sub].forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
+          });
+        }, 250);
+      });
+    });
   </script>
 </body>
 </html>
