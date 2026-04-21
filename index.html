@@ -486,6 +486,7 @@
 
     /* ─── MOBILE ─── */
     @media (max-width: 900px) {
+      .banner-detail { display: none; }
       .hero-card { flex-direction: column; padding: 40px 28px; min-height: auto; }
       .hero-text { min-width: auto; text-align: center; }
       .hero-text .sub { margin-left: auto; margin-right: auto; }
@@ -502,14 +503,14 @@
 <body>
 
   <!-- LEGAL BANNER -->
-  <div style="background: var(--dark); color: #fff; text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 500; position: fixed; top: 0; left: 0; right: 0; z-index: 101;">
+  <div id="top-banner" style="background: var(--dark); color: #fff; text-align: center; padding: 10px 24px; font-size: 13px; font-weight: 500; position: fixed; top: 0; left: 0; right: 0; z-index: 101;">
     <span style="color: var(--yellow); font-weight: 700;">E-facturation obligatoire dès sept. 2026</span>
-    <span style="color: rgba(255,255,255,0.5);"> — Tous les artisans sont concernés. Facto vous met en conformité.</span>
+    <span class="banner-detail" style="color: rgba(255,255,255,0.5);"> — Tous les artisans sont concernés. Facto vous met en conformité.</span>
     <a href="/e-facturation" style="color: var(--lime); font-weight: 700; text-decoration: none; margin-left: 8px;">En savoir plus →</a>
   </div>
 
   <!-- NAV -->
-  <nav style="top: 37px;">
+  <nav id="main-nav">
     <a href="/" class="nav-logo">facto<span>.</span></a>
     <div class="nav-right">
       <div class="lang-switch" id="lang-switch">
@@ -519,7 +520,7 @@
       <a href="#features">Fonctionnalités</a>
       <a href="https://apps.apple.com/app/facto/id6760936380">iOS</a>
       <a href="#">Android</a>
-      <a href="#" class="nav-cta">Connexion</a>
+      <a href="https://app.facto-app.fr/login" class="nav-cta">Connexion</a>
     </div>
   </nav>
 
@@ -1101,6 +1102,17 @@
         sub: "Talk in any language. Facto structures, translates and generates your quote in seconds."
       }
     };
+
+    // Position nav below banner
+    (function() {
+      var banner = document.getElementById('top-banner');
+      var nav = document.getElementById('main-nav');
+      function positionNav() {
+        nav.style.top = banner.offsetHeight + 'px';
+      }
+      positionNav();
+      window.addEventListener('resize', positionNav);
+    })();
 
     document.querySelectorAll('.ls-btn').forEach(btn => {
       btn.addEventListener('click', () => {
