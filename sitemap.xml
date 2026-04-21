@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://facto-app.fr/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- E-facturation landing -->
+  <url>
+    <loc>https://facto-app.fr/e-facturation</loc>
+    <lastmod>2026-03-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://facto-app.fr/blog/</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: FR cornerstone -->
+  <url>
+    <loc>https://facto-app.fr/blog/devis-facture-chantier</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://facto-app.fr/blog/devis-facture-chantier" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://facto-app.fr/blog/facto-aplikasi-arabi" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://facto-app.fr/blog/facto-para-artesaos" />
+  </url>
+
+  <!-- Blog: E-facturation 2026 -->
+  <url>
+    <loc>https://facto-app.fr/blog/e-facturation-artisan-2026</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: AI Améliorer -->
+  <url>
+    <loc>https://facto-app.fr/blog/ameliorer-devis-ia</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog: Arabic -->
+  <url>
+    <loc>https://facto-app.fr/blog/facto-aplikasi-arabi</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://facto-app.fr/blog/facto-aplikasi-arabi" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://facto-app.fr/blog/devis-facture-chantier" />
+  </url>
+
+  <!-- Blog: Portuguese -->
+  <url>
+    <loc>https://facto-app.fr/blog/facto-para-artesaos</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://facto-app.fr/blog/facto-para-artesaos" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://facto-app.fr/blog/devis-facture-chantier" />
+  </url>
+
+</urlset>
